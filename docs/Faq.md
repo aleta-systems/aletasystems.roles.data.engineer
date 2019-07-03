@@ -8,7 +8,7 @@ This document contains some basic Q/A in regards to setting up.
 - **SQL Server Password**: `C0mplexPassw0rd!` (or value of `SA_PASSWORD` in `\docker-compose.yml`)
 - **SQL Server Port**: `14333`
 
-![SSMS Connection](/assets/ssms.png "Connect via SSMS")
+![SSMS Connection](./assets/ssms.png "Connect via SSMS")
 
 ## Common Questions
 
