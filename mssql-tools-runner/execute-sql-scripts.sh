@@ -4,7 +4,7 @@ basepathSqlScripts='/tsqlscripts'
 
 # Execute Master Scripts
 printf "[PROCESS | Sql Files for (Master) DataBase]\n"
-for tsqlFile in `find $basepathSqlScripts/master/*.sql`; do
+for tsqlFile in `find $basepathSqlScripts -wholename "$basepathSqlScripts/master/*.sql"`; do
     
     printf "\t|/opt/mssql-tools/bin/sqlcmd -S db -d master -U sa -i \"$tsqlFile\" ;\n"
     /opt/mssql-tools/bin/sqlcmd -S db -d master -U sa -P "$SA_PASSWORD" -i "$tsqlFile";
@@ -20,7 +20,7 @@ for dbName in `find $basepathSqlScripts ! -path "$basepathSqlScripts" -type d -p
     if([[ $dbName != "master" ]]) then
         
         # Create Database IF NOT EXISTS
-        queryStatement="IF DB_ID('[$dbName]') IS NOT NULL CREATE DABASE [$dbName];\n"
+        queryStatement="IF DB_ID('[$dbName]') IS NOT NULL CREATE DATABASE [$dbName];\n"
         q=$(printf "$queryStatement")
         printf "\t| TRY CREATE DATABASE $dbName\n"
         printf "\t\t|/opt/mssql-tools/bin/sqlcmd -S db -d master -U sa -P $SA_PASSWORD -q \"$q\" ;\n"
