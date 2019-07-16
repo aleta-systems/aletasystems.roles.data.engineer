@@ -3,7 +3,7 @@ services:
     db:
         image: mcr.microsoft.com/mssql/server
         environment:
-            SA_PASSWORD: C0mplexPassw0rd!
+            SA_PASSWORD: ${SQL_SERVER_PASSWORD}
             ACCEPT_EULA: Y
         ports:
             - '14333:1433'
@@ -15,15 +15,15 @@ services:
         volumes: 
           - ./mssql-tools-runner:/tsqlscripts
         environment:
-            SA_PASSWORD: C0mplexPassw0rd!
+            SA_PASSWORD: ${SQL_SERVER_PASSWORD}
         command: '/tsqlscripts/execute-sql-scripts.sh'
 
     flyway:
         image: 'boxfuse/flyway:5.2.4'
-        command: '-user=sa -password=C0mplexPassw0rd! -url="jdbc:sqlserver://db;databaseName=DataWarehouse" -connectRetries=60 migrate'
+        command: '-user=sa -password=${SQL_SERVER_PASSWORD} -url="jdbc:sqlserver://db;databaseName=DataWarehouse" -connectRetries=60 migrate'
         volumes:
-            - '/db_Datawarehouse/sql:/flyway/sql'
-            - '/db_Datawarehouse/conf:/flyway/conf'
+            - './db_Datawarehouse/sql:/flyway/sql'
+            - './db_Datawarehouse/conf:/flyway/conf'
         depends_on:
             - inittools
             - db
