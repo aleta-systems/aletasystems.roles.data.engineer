@@ -65,7 +65,7 @@ You will need access to a machine (Windows/Mac/Linux) with the following install
 
 **Submission:**
 
-_If Your email will contain information on submission please use that or else._
+_If your email contains information on submission please use that._
 
 1. Invite GitHub User to your repo Under `settings/collaboration`
 1. add `@kgeorge314` as a collaborator
