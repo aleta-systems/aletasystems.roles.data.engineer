@@ -11,14 +11,14 @@ services:
             - '14333:1433'
 
     inittools:
-        build: .
-        depends_on:
-            - db
+        image: aletasystems/tsqlrunner
         volumes: 
           - ./mssql-tools-runner:/tsqlscripts
         environment:
-            SA_PASSWORD: ${SQL_SERVER_PASSWORD}
-        command: '/tsqlscripts/execute-sql-scripts.sh'
+            SQLCMDSERVER: db
+            SQLCMDUSER: sa
+            SQLCMDPASSWORD: ${SQL_SERVER_PASSWORD}
+        command: '/tooling/execute-sql-scripts.sh'
 
     flyway:
         image: 'boxfuse/flyway:5.2.4'
