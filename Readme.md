@@ -36,21 +36,39 @@ You will need access to a machine (Windows/Mac/Linux) with the following install
 
 ## Getting Started
 
+**Github:**
+
 1. Click on the `Use this template` and create a copy of this repository
-2. Clone the copy of the repository you created (not this repo)
-3. If you have docker installed and setup.
-    1. Start `docker-compose -f "docker-compose.yml" up -d --build`
-    2. wait up-to a minute (_to be safe_)
-    3. connect to the database
-    4. if there is no database called `datawarehouse`, restart docker and try again.
-    5. review execution logs `docker-compose logs -f` for any problems (`-f` is follow)
-4. Start working on the Tickets/Tasks contained within `.\TicketsTask` folder. (_Please note your email will supersede this step_)
-5. Save your OBJECT scripts in `.\db_Datawarehouse\sql\*` appropriately.
-    1. Flyway is the build tool.
-    2. Please read more [here](./db_Datawarehouse/about-flyway.md)
-    3. You can also review existing files as examples
-6. If your solution drifts from TSQL, please include instructions in a markdown file called `instructions.md`
-7. Your email will contain information on submission
+1. Optionally and recommended, please set repository to Private
+
+**On your PC:**
+
+1. Clone the copy of the repository you created to your local machine (_not this repo_)
+1. Install Docker and required tools if not done already
+
+**Quick Start:**
+
+1. Start `docker-compose -f "docker-compose.yml" up -d --build`
+1. wait up-to a minute (_to be safe_)
+1. connect to the database
+1. if there is no database called `datawarehouse`, restart docker and try again.
+1. review execution logs `docker-compose logs -f` for any problems (`-f` is follow)
+
+**Interview Tasks:**
+
+1. The tasks are contained within `.\TicketsTask` folder. (_Please note your email will supersede this step_)
+1. Save your OBJECT scripts in `.\db_Datawarehouse\sql\*` appropriately.
+    1. Flyway is the build tool used.
+    1. Please read more [here](./db_Datawarehouse/about-flyway.md)
+    1. You can also review existing files as examples
+1. If your solution drifts from TSQL, please include instructions in a markdown file called `instructions.md`
+
+**Submission:**
+
+_If Your email will contain information on submission please use that or else._
+
+1. Invite GitHub User to your repo Under `settings/collaboration`
+1. add `@kgeorge314` as a collaborator
 
 **Some Useful Commands:**
 
