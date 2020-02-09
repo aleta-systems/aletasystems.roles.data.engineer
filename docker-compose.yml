@@ -13,7 +13,7 @@ services:
     inittools:
         image: aletasystems/tsqlrunner
         volumes: 
-          - ./mssql-tools-runner:/tsqlscripts
+          - ./PreFlywaySQLScripts:/tsqlscripts
         environment:
             SQLCMDSERVER: db
             SQLCMDUSER: sa
