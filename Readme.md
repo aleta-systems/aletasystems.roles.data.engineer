@@ -78,5 +78,5 @@ _If your email contains information on submission please use that._
 * To remove all container (use with caution if you have other containers) `docker ps -a --format '{{ json .}}' | ConvertFrom-Json | %{ docker rm "$($_.id)" -f }^C`
 * To remove images
   * Flyway: `docker rmi boxfuse/flyway:5.2.4`
-  * InitTools: `docker rmi aletasystemsroledataengineerphase2_inittools`
-  * SQL Server `mcr.microsoft.com/mssql/server`
+  * InitTools: `docker rmi aletasystems/tsqlrunner`
+  * SQL Server `docker rmi mcr.microsoft.com/mssql/server`
