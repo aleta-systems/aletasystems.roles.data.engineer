@@ -75,7 +75,7 @@ _If your email contains information on submission please use that._
 * To Stop `docker-compose -f "docker-compose.yml" down`
 * To Start `docker-compose -f "docker-compose.yml" up -d --build`
 * To see running images `docker ps -a`
-* To remove all container (use with caution if you have other containers) `docker ps -a --format '{{ json .}}' | ConvertFrom-Json | %{ docker rm "$($_.id)" -f }^C`
+* To remove all container (use with caution if you have other containers) `docker ps -a --format '{{ json .}}' | ConvertFrom-Json | %{ docker rm "$($_.id)" -f }`
 * To remove images
   * Flyway: `docker rmi boxfuse/flyway:5.2.4`
   * InitTools: `docker rmi aletasystems/tsqlrunner`
